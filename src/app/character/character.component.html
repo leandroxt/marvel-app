@@ -1,0 +1,16 @@
+<div class="characters" *ngIf="!fetchError">
+  <h3>Characters</h3>
+
+  <div *ngIf="isFetching; else charactersBlock">
+    <app-spinner></app-spinner>
+  </div>
+
+  <div #charactersBlock class="character-item" *ngFor="let character of characters;">
+    <a href="/character/{{character.id}}">{{character.name}}</a>
+  </div>
+
+</div>
+
+<div *ngIf="fetchError">
+  <app-error></app-error>
+</div>
