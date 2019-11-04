@@ -1,0 +1,33 @@
+<div *ngIf="isFetching; else data">
+  <app-spinner></app-spinner>
+</div>
+
+
+<ng-template #data>
+
+  <div *ngIf="fetchError; else details">
+    <app-error></app-error>
+  </div>
+
+  <ng-template #details>
+
+    <h2>Character {{character.name}} details</h2>
+    <div class="details">
+
+      <div class="picture">
+        <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" class="thumb" />
+      </div>
+
+      <div class="info">
+        <div class="item"><strong>id: </strong> {{character.id}}</div>
+        <div class="item"><strong>name: </strong> {{character.name}}</div>
+        <div class="item"><strong>description: </strong> {{character.description || "(no description)"}}</div>
+      </div>
+
+    </div>
+
+  </ng-template>
+
+  <div (click)="back()" role="button" class="back">Back</div>
+
+</ng-template>

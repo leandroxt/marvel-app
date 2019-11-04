@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { CharacterService } from './services/character.service';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { ErrorComponent } from './error/error.component';
+import { DetailsComponent } from './character/details/details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ErrorComponent } from './error/error.component';
     CharacterComponent,
     HeaderComponent,
     SpinnerComponent,
-    ErrorComponent
+    ErrorComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

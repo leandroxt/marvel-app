@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ICharacter } from './character.interface';
 import { CharacterService } from '../services/character.service';
 
@@ -13,7 +14,7 @@ export class CharacterComponent implements OnInit {
   isFetching = true;
   fetchError = false;
 
-  constructor(private characterService: CharacterService) { }
+  constructor(private characterService: CharacterService, private router: Router) { }
 
   ngOnInit() {
     this.characterService.fetch().subscribe(({ data: { results } }) => {
@@ -30,6 +31,10 @@ export class CharacterComponent implements OnInit {
         this.fetchError = true;
         this.isFetching = false;
       });
+  }
+
+  openDetails(character: ICharacter) {
+    this.router.navigate(['/character', character.id]);
   }
 
 }

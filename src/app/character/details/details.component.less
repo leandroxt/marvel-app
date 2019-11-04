@@ -1,0 +1,31 @@
+.details {
+  display: flex;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 1px 15px rgba(27,31,35,0.15);
+
+  > .picture {
+    flex: 1;
+
+    > img.thumb {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  > .info {
+    flex: 2;
+
+    > .item {
+      padding: 6px 32px;
+    }
+  }
+}
+
+.back {
+  font-size: 18px;
+  color: #0000FF;
+  text-decoration: underline;
+  margin-top: 22px;
+  cursor: pointer;
+}
