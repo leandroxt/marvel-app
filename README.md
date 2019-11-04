@@ -4,6 +4,19 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+You need to create an account at `https://developer.marvel.com/` to obtain an public and private key to allow the application connect to the API.
+
+Then you need to fill those keys values in the file `src/environments/environment.ts` in the respective key as follow:
+
+```
+{
+  publicKey: 'YOUR_PUBLIC_KEY',
+  privateKey: 'YOUR_PRIVATE_KEY'
+}
+```
+
+Run `npm install`
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
